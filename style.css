@@ -223,13 +223,13 @@ body {
 }
 
 .login-btn {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   padding: 10px 22px;
   border-radius: 999px;                 /* pill = premium */
   background: rgba(82, 77, 77, 0.566);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(187, 164, 164, 0.845);
+  border: none;
 
   color: #fff;
   font-size: 14px;
@@ -265,7 +265,7 @@ body {
 ========================= */
 
 .services-section {
-  background: #f4f8fb;          /* light theme */
+  background: #D3D3D3;          /* light grey */
   padding: 80px 60px;
   text-align: center;
   color: #111;
@@ -285,6 +285,7 @@ body {
 
 /* Grid */
 .services-grid {
+  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
@@ -294,6 +295,9 @@ body {
 
 /* Card */
 .service-card {
+  /* border: 1px solid rgb(201, 81, 81); */
+  border: 2px solid #17A2B8;
+  box-shadow: 5px 5px 5px rgba(150, 150, 170, 0.3), 0 0 15px rgba(23, 162, 184, 0.5);
   background: #fff;
   border-radius: 50%;
   height: 240px;
@@ -307,7 +311,6 @@ body {
   align-items: center;
   justify-content: center;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.35s ease;
   cursor: pointer;
 }
@@ -336,4 +339,216 @@ body {
 .service-card:hover {
   transform: translateY(-12px) scale(1.03);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================= TESTIMONIAL SECTION ================= */
+
+.testimonials {
+  padding: 80px 10%;
+  background: #f5f7fa;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  color: #222;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: #87898c;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.testimonial-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #f3e4e4;
+  margin-bottom: 15px;
+}
+
+.short-review {
+  font-style: italic;
+  color: #ffffff;
+}
+
+/* ================= POPUP ================= */
+
+.testimonial-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  animation: popupFade 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+@keyframes popupFade {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* ================= PRICING SECTION ================= */
+
+.pricing {
+  padding: 80px 10%;
+  background: #485c70;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pricing-subtitle {
+  color: #f2bfbf;
+  margin-bottom: 50px;
+}
+
+.pricing-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.pricing-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.pricing-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.pricing-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.pricing-card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.pricing-card h1 span {
+  font-size: 1rem;
+  color: #666;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.pricing-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #3b82f6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.pricing-btn:hover {
+  background: #2563eb;
+}
+
+/* Featured Plan */
+
+.featured {
+  background: #1e293b;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.featured ul li {
+  color: #e2e8f0;
+}
+
+.featured-btn {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.featured-btn:hover {
+  background: #d97706;
+}
+
+.badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #f59e0b;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }

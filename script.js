@@ -44,7 +44,8 @@ const signupSubmit = document.getElementById("signupSubmit");
 /* -------- RESET STATE -------- */
 function resetToLogin() {
     signupForm.classList.remove("active");
-    loginForm.classList.add("active");
+    loginForm.classList.add
+    ("active");
 
     gsap.set(loginForm, { opacity: 1, x: 0 });
     gsap.set(signupForm, { opacity: 0, x: 30 });
@@ -141,3 +142,34 @@ signupSubmit.addEventListener("click", () => {
     // future backend signup logic yaha aayega
     switchToLogin();
 });
+
+
+
+
+
+
+//   FOR TESTIMONIAL SECTION
+
+
+const cards = document.querySelectorAll(".testimonial-card");
+const popup = document.getElementById("popup");
+const popupText = document.getElementById("popup-text");
+const closeBtn = document.querySelector(".close-btn");
+
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    popup.style.display = "flex";
+    popupText.innerText = card.getAttribute("data-review");
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
+});
+
