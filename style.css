@@ -9,6 +9,7 @@ body {
   background: #0c2d35;
   color: white;
   overflow-x: hidden;
+  font-size: 18px;
 }
 
 /* Hamburger */
@@ -54,11 +55,11 @@ body {
 
 
 .nav-links a {
-  padding: 10px 18px;
+  padding: 14px 22px;
   border-radius: 999px;
 
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   color: white;
 
@@ -82,8 +83,8 @@ body {
 }
 
 .nav-actions input {
-  height: 40px;
-  padding: 0 18px;
+  height: 48px;
+  padding: 0 20px;
   border-radius: 999px;
 
   border: none;
@@ -91,7 +92,7 @@ body {
 
   background: rgba(255, 255, 255, 0.92);
   color: #000;
-  font-size: 14px;
+  font-size: 18px;
 
   transition: all 0.3s ease;
 }
@@ -114,7 +115,7 @@ body {
 /* Hero */
 .hero {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background:
     url("assets/back-new.png") center / cover no-repeat;
   position: relative;
@@ -142,7 +143,7 @@ body {
 /* CONTENT */
 .hero-left {
   width: 50%;
-  padding: 120px 80px;
+  padding: 140px 100px;
   position: relative;
   z-index: 2;
 }
@@ -163,7 +164,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 64px;
+  font-size: 84px;
   line-height: 1;
   margin-bottom: 20px;
 }
@@ -176,6 +177,7 @@ body {
   max-width: 400px;
   opacity: 0.85;
   margin-bottom: 25px;
+  font-size: 18px;
 }
 
 .cta {
@@ -190,8 +192,8 @@ body {
 
 
 .glass-pill {
-  height: 40px;
-  padding: 0 18px;
+  height: 48px;
+  padding: 0 20px;
   border-radius: 999px;
 
   display: flex;
@@ -205,7 +207,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: white;
 
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   text-decoration: none;
 
@@ -224,7 +226,7 @@ body {
 
 .login-btn {
   /* border: 1px solid yellow; */
-  padding: 10px 22px;
+  padding: 12px 26px;
   border-radius: 999px;                 /* pill = premium */
   background: rgba(82, 77, 77, 0.566);
   backdrop-filter: blur(10px);
@@ -232,7 +234,7 @@ body {
   border: none;
 
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.4px;
 
@@ -266,7 +268,7 @@ body {
 
 .services-section {
   background: #D3D3D3;          /* light grey */
-  padding: 80px 60px;
+  padding: 100px 80px;
   text-align: center;
   color: #111;
 }
@@ -285,10 +287,9 @@ body {
 
 /* Grid */
 .services-grid {
-  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 40px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -300,8 +301,8 @@ body {
   box-shadow: 5px 5px 5px rgba(150, 150, 170, 0.3), 0 0 15px rgba(23, 162, 184, 0.5);
   background: #fff;
   border-radius: 50%;
-  height: 240px;
-  width: 240px;
+  height: 300px;
+  width: 300px;
 
   margin: auto;
   padding: 30px;
@@ -317,20 +318,20 @@ body {
 
 /* Icon */
 .service-icon {
-  font-size: 36px;
+  font-size: 48px;
   margin-bottom: 14px;
 }
 
 /* Title */
 .service-card h3 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 /* Description */
 .service-card p {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   line-height: 1.4;
 }
@@ -379,15 +380,15 @@ body {
 }
 
 .testimonial-card img {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   margin-bottom: 15px;
 }
 
 .testimonial-card h3 {
   margin: 10px 0 5px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .role {
@@ -449,7 +450,7 @@ body {
 
 .pricing-title {
   color: #000;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -485,7 +486,7 @@ body {
 }
 
 .pricing-card h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 
@@ -596,7 +597,7 @@ body {
 
 .footer-col p {
   color: black;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 15px;
 }
@@ -684,6 +685,6 @@ body {
   border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: 20px;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   /* color: #94a3b8; */
 }
