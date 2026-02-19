@@ -96,7 +96,8 @@ function closeModal() {
 
 
 /* -------- LOGIN → SIGNUP -------- */
-goSignup.addEventListener("click", () => {
+goSignup.addEventListener("click", (e) => {
+    e.preventDefault();
     gsap.to(loginForm, {
         opacity: 0,
         x: -30,
@@ -116,7 +117,10 @@ goSignup.addEventListener("click", () => {
 
 
 /* -------- SIGNUP → LOGIN -------- */
-goLogin.addEventListener("click", switchToLogin);
+goLogin.addEventListener("click", (e) => {
+    e.preventDefault();
+    switchToLogin();
+});
 
 function switchToLogin() {
     gsap.to(signupForm, {
@@ -138,9 +142,22 @@ function switchToLogin() {
 
 
 /* -------- SIGNUP SUBMIT → AUTO LOGIN -------- */
-signupSubmit.addEventListener("click", () => {
+signupSubmit.addEventListener("click", (e) => {
+    e.preventDefault();
     // future backend signup logic yaha aayega
     switchToLogin();
+});
+
+/* -------- LOGIN FORM SUBMIT -------- */
+loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // future backend login logic yaha aayega
+    console.log("Login submitted!");
+});
+
+/* -------- SIGNUP FORM SUBMIT -------- */
+signupForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 });
 
 
