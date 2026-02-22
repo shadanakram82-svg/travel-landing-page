@@ -2,6 +2,9 @@
    GSAP INTRO ANIMATIONS
 ====================== */
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
 gsap.from(".navbar", {
     y: -40,
     opacity: 0,
@@ -44,8 +47,7 @@ const signupSubmit = document.getElementById("signupSubmit");
 /* -------- RESET STATE -------- */
 function resetToLogin() {
     signupForm.classList.remove("active");
-    loginForm.classList.add
-    ("active");
+    loginForm.classList.add("active");
 
     gsap.set(loginForm, { opacity: 1, x: 0 });
     gsap.set(signupForm, { opacity: 0, x: 30 });
@@ -95,11 +97,10 @@ function closeModal() {
 }
 
 
-/* -------- LOGIN → SIGNUP -------- */
+/* -------- LOGIN ? SIGNUP -------- */
 goSignup.addEventListener("click", (e) => {
     e.preventDefault();
     gsap.to(loginForm, {
-        opacity: 0,
         x: -30,
         duration: 0.25,
         onComplete: () => {
@@ -116,7 +117,7 @@ goSignup.addEventListener("click", (e) => {
 });
 
 
-/* -------- SIGNUP → LOGIN -------- */
+/* -------- SIGNUP ? LOGIN -------- */
 goLogin.addEventListener("click", (e) => {
     e.preventDefault();
     switchToLogin();
@@ -124,7 +125,6 @@ goLogin.addEventListener("click", (e) => {
 
 function switchToLogin() {
     gsap.to(signupForm, {
-        opacity: 0,
         x: 30,
         duration: 0.25,
         onComplete: () => {
@@ -141,7 +141,7 @@ function switchToLogin() {
 }
 
 
-/* -------- SIGNUP SUBMIT → AUTO LOGIN -------- */
+/* -------- SIGNUP SUBMIT ? AUTO LOGIN -------- */
 signupSubmit.addEventListener("click", (e) => {
     e.preventDefault();
     // future backend signup logic yaha aayega
@@ -161,10 +161,6 @@ signupForm.addEventListener("submit", (e) => {
 });
 
 
-
-
-
-
 //   FOR TESTIMONIAL SECTION
 
 
@@ -178,6 +174,21 @@ cards.forEach(card => {
     popup.style.display = "flex";
     popupText.innerText = card.getAttribute("data-review");
   });
+  
+  // Spotlight effect on hover
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    
+    card.style.setProperty('--mouse-x', x + '%');
+    card.style.setProperty('--mouse-y', y + '%');
+  });
+  
+  card.addEventListener("mouseleave", () => {
+    card.style.setProperty('--mouse-x', '50%');
+    card.style.setProperty('--mouse-y', '50%');
+  });
 });
 
 closeBtn.addEventListener("click", () => {
@@ -190,3 +201,74 @@ window.addEventListener("click", (e) => {
   }
 });
 
+/* =====================================================
+   SERVICES SECTION POPUP SCROLL ANIMATION
+===================================================== */
+
+gsap.from(".service-card-wrapper", {
+  scrollTrigger: {
+    trigger: ".services-grid",
+    start: "top 75%",
+    end: "top 20%",
+    scrub: 0.5
+  },
+  opacity: 0,
+  scale: 0.85,
+  y: 50,
+  stagger: 0.15,
+  duration: 0.8,
+  ease: "back.out"
+});
+
+/* =====================================================
+   SERVICE CARD HOVER - FEATURES BOX
+===================================================== */
+
+document.querySelectorAll('.service-card-wrapper').forEach(wrapper => {
+  const card = wrapper.querySelector('.service-card');
+  const featuresBox = wrapper.querySelector('.features-box');
+  const featuresData = card.getAttribute('data-features');
+
+  if (featuresData) {
+    // Parse features from pipe-separated string
+    const features = featuresData.split('|');
+    
+    // Create features HTML
+    let featuresHTML = '';
+    features.forEach(feature => {
+      featuresHTML += `<div>${feature.trim()}</div>`;
+    });
+    
+    featuresBox.innerHTML = featuresHTML;
+  }
+
+  // Show features on hover
+  card.addEventListener('mouseenter', () => {
+    featuresBox.classList.add('show');
+  });
+
+  wrapper.addEventListener('mouseleave', () => {
+    featuresBox.classList.remove('show');
+  });
+});
+/* =====================================================
+   PRICING FEATURED CARD SPOTLIGHT EFFECT
+===================================================== */
+
+const featuredPricingCard = document.querySelector('.pricing-card.featured');
+
+if (featuredPricingCard) {
+  featuredPricingCard.addEventListener("mousemove", (e) => {
+    const rect = featuredPricingCard.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    
+    featuredPricingCard.style.setProperty('--mouse-x', x + '%');
+    featuredPricingCard.style.setProperty('--mouse-y', y + '%');
+  });
+  
+  featuredPricingCard.addEventListener("mouseleave", () => {
+    featuredPricingCard.style.setProperty('--mouse-x', '50%');
+    featuredPricingCard.style.setProperty('--mouse-y', '50%');
+  });
+}

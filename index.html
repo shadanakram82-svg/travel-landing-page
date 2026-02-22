@@ -7,6 +7,7 @@
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -64,28 +65,40 @@
 
   <div class="services-grid">
 
-    <div class="service-card">
-      <div class="service-icon">🧭</div>
-      <h3>Travel Plan</h3>
-      <p>Personalized travel routes, planning and guidance.</p>
+    <div class="service-card-wrapper">
+      <div class="service-card" data-features="✓ Route optimization|✓ Real-time navigation|✓ Travel itinerary|✓ Local recommendations|✓ Offline maps">
+        <div class="service-icon">🧭</div>
+        <h3>Travel Plan</h3>
+        <p>Personalized travel routes, planning and guidance.</p>
+      </div>
+      <div class="features-box"></div>
     </div>
 
-    <div class="service-card">
-      <div class="service-icon">🩺</div>
-      <h3>Medical Support</h3>
-      <p>Quick access to medical help and nearby hospitals.</p>
+    <div class="service-card-wrapper">
+      <div class="service-card" data-features="✓ Hospital locator|✓ Doctor on call|✓ Prescription delivery|✓ Health records access|✓ Emergency response">
+        <div class="service-icon">🩺</div>
+        <h3>Medical Support</h3>
+        <p>Quick access to medical help and nearby hospitals.</p>
+      </div>
+      <div class="features-box"></div>
     </div>
 
-    <div class="service-card">
-      <div class="service-icon">🚨</div>
-      <h3>Emergency Support</h3>
-      <p>Instant emergency assistance wherever you are.</p>
+    <div class="service-card-wrapper">
+      <div class="service-card" data-features="✓ SOS button|✓ Auto-alert contacts|✓ Police coordination|✓ Real-time assistance|✓ Priority response">
+        <div class="service-icon">🚨</div>
+        <h3>Emergency Support</h3>
+        <p>Instant emergency assistance wherever you are.</p>
+      </div>
+      <div class="features-box"></div>
     </div>
 
-    <div class="service-card">
-      <div class="service-icon">📡</div>
-      <h3>Smart Alert</h3>
-      <p>Live alerts for risk zones, weather, and safety.</p>
+    <div class="service-card-wrapper">
+      <div class="service-card" data-features="✓ Safety alerts|✓ Weather updates|✓ Traffic monitoring|✓ Event notifications|✓ Risk zone mapping">
+        <div class="service-icon">📡</div>
+        <h3>Smart Alert</h3>
+        <p>Live alerts for risk zones, weather, and safety.</p>
+      </div>
+      <div class="features-box"></div>
     </div>
 
   </div>
@@ -94,47 +107,105 @@
 
 
 
+<!-- ================= PRICING SECTION ================= -->
+<section class="pricing">
+  <div class="pricing-badge">Pricing</div>
+  <h2 class="pricing-title">Choose the plan that fits your needs.</h2>
+  <p class="pricing-subtitle">Netus sagittis sapien sed monesus consulendum. Eu eget ut oras viverra. Volutpat posuere ac nulla scelerisque.</p>
+  
+  <div class="pricing-container">
+    
+    <!-- Personal Plan -->
+    <div class="pricing-card">
+      <div class="card-badge">Personal</div>
+      <h3>Free</h3>
+      <p class="plan-description">To discover our product and its features</p>
+      <ul>
+        <li>✔ Unlimited projects</li>
+        <li>✔ Share with 5 team members</li>
+        <li>✔ Sync across devices</li>
+        <li>✔ 2GB individual daily team user</li>
+      </ul>
+      <button class="pricing-btn btn-outline">Learn more</button>
+    </div>
+
+    <!-- Personal Pro Plan (Featured) -->
+    <div class="pricing-card featured">
+      <div class="card-badge badge-featured">Personal Pro</div>
+      <h3>$20</h3>
+      <p class="pricing-period">per month</p>
+      <p class="plan-description">The best option for individual freelancers</p>
+      <ul>
+        <li>✔ Unlimited projects</li>
+        <li>✔ Share with 25 team members</li>
+        <li>✔ Sync across devices</li>
+        <li>✔ 500B individual data team user</li>
+      </ul>
+      <button class="pricing-btn btn-featured">Try for free</button>
+    </div>
+    
+    <!-- Team Plan -->
+    <div class="pricing-card">
+      <div class="card-badge">Team</div>
+      <h3>$50</h3>
+      <p class="pricing-period">per month</p>
+      <p class="plan-description">Good suited for larger teams</p>
+      <ul>
+        <li>✔ Unlimited projects</li>
+        <li>✔ Unlimited team members</li>
+        <li>✔ Sync across devices</li>
+        <li>✔ Unlimited individual data each user</li>
+      </ul>
+      <button class="pricing-btn btn-light">Try for free</button>
+    </div>
+    
+  </div>
+</section>
+
 <!-- ================= TESTIMONIAL SECTION ================= -->
+
 <section class="testimonials">
   <h2 class="section-title"> Our Travelers </h2>
-
+  
   <div class="testimonial-container">
-
+    
     <div class="testimonial-card" data-review="Safe Travel saved my life during a highway emergency. The instant alert system worked perfectly and the support team was very responsive.">
       <img src="https://i.pravatar.cc/100?img=1" alt="">
       <h3>Rahul Sharma</h3>
-      <p class="role">Software Engineer</p>
-      <p class="short-review">“Amazing emergency support system...”</p>
+      <p class="role">Software Engineer</p>      <p class="date">Jan 15, 2026</p>      <p class="short-review">“Amazing emergency support system...”</p>
     </div>
-
+    
     <div class="testimonial-card" data-review="The smart alert feature gives peace of mind while traveling alone. Highly recommended for solo travelers.">
       <img src="https://i.pravatar.cc/100?img=2" alt="">
       <h3>Priya Mehta</h3>
-      <p class="role">Doctor</p>
-      <p class="short-review">“Best app for solo travel safety...”</p>
+      <p class="role">Doctor</p>      <p class="date">Feb 08, 2026</p>      <p class="short-review">“Best app for solo travel safety...”</p>
     </div>
-
+    
     <div class="testimonial-card" data-review="Medical support during our trip was extremely fast and professional. This platform truly cares about safety.">
       <img src="https://i.pravatar.cc/100?img=3" alt="">
       <h3>Arjun Verma</h3>
-      <p class="role">Entrepreneur</p>
-      <p class="short-review">“Medical support was instant...”</p>
+      <p class="role">Entrepreneur</p>      <p class="date">Dec 22, 2025</p>      <p class="short-review">“Medical support was instant...”</p>
     </div>
-
+    
     <div class="testimonial-card" data-review="Travel planning + emergency backup in one place. Very smooth experience and modern UI.">
       <img src="https://i.pravatar.cc/100?img=4" alt="">
       <h3>Sneha Kapoor</h3>
-      <p class="role">Content Creator</p>
-      <p class="short-review">“Clean UI and reliable alerts...”</p>
+      <p class="role">Content Creator</p>      <p class="date">Nov 30, 2025</p>      <p class="short-review">“Clean UI and reliable alerts...”</p>
     </div>
-
+    
     <div class="testimonial-card" data-review="I feel much safer on road trips now. The SOS feature is extremely helpful and easy to use.">
       <img src="https://i.pravatar.cc/100?img=5" alt="">
       <h3>Karan Singh</h3>
-      <p class="role">Business Analyst</p>
-      <p class="short-review">“Perfect for road trips...”</p>
+      <p class="role">Business Analyst</p>      <p class="date">Feb 01, 2026</p>      <p class="short-review">“Perfect for road trips...”</p>
     </div>
-
+    
+  </div>
+  
+  <div class="stats-container">
+    <div class="stats-box">
+      <h3 class="stats-number">500K+</h3>
+      <p class="stats-label">Downloads</p>
+    </div>
   </div>
 </section>
 
@@ -146,59 +217,61 @@
   </div>
 </div>
 
-<!-- ================= PRICING SECTION ================= -->
-<section class="pricing">
-  <h2 class="pricing-title">Choose Your Safety Plan</h2>
-  <p class="pricing-subtitle">Join Safe Travel and unlock premium safety features</p>
 
-  <div class="pricing-container">
+<!-- AUTH MODAL -->
+<div class="overlay hidden" id="overlay"></div>
 
-    <!-- Basic Plan -->
-    <div class="pricing-card">
-      <h3>Basic</h3>
-      <h1>₹199<span>/month</span></h1>
-      <ul>
-        <li>✔ Smart Travel Plan</li>
-        <li>✔ Live Location Sharing</li>
-        <li>✔ Email Support</li>
-        <li>✖ Emergency Priority</li>
-        <li>✖ Medical Assistance</li>
-      </ul>
-      <button class="pricing-btn">Get Started</button>
+<div class="login-modal hidden" id="loginModal">
+  <!-- LOGIN FORM -->
+  <form class="form-container active" id="loginForm">
+    <h2>Welcome </h2>
+    <p class="form-subtitle">Sign in to your account</p>
+    
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="your@email.com" required>
     </div>
-
-    <!-- Pro Plan (Recommended) -->
-    <div class="pricing-card featured">
-      <div class="badge">Most Popular</div>
-      <h3>Pro</h3>
-      <h1>₹499<span>/month</span></h1>
-      <ul>
-        <li>✔ Everything in Basic</li>
-        <li>✔ Emergency SOS Access</li>
-        <li>✔ Medical Assistance</li>
-        <li>✔ Smart Alerts</li>
-        <li>✔ 24/7 Support</li>
-      </ul>
-      <button class="pricing-btn featured-btn">Join Now</button>
+    
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••" required>
     </div>
-
-    <!-- Premium Plan -->
-    <div class="pricing-card">
-      <h3>Premium</h3>
-      <h1>₹999<span>/month</span></h1>
-      <ul>
-        <li>✔ Everything in Pro</li>
-        <li>✔ Priority Emergency Response</li>
-        <li>✔ Dedicated Travel Advisor</li>
-        <li>✔ Family Coverage (4 Members)</li>
-        <li>✔ Travel Insurance Support</li>
-      </ul>
-      <button class="pricing-btn">Go Premium</button>
+    
+    <button type="submit" class="form-btn">Login</button>
+    
+    <p class="form-toggle">Don't have an account? <a href="#" id="goSignup">Sign up</a></p>
+  </form>
+  
+  <!-- SIGNUP FORM -->
+  <form class="form-container" id="signupForm">
+    <h2>Create Account</h2>
+    <p class="form-subtitle">Join us for safer travels</p>
+    
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="Your name" required>
     </div>
-
-  </div>
-</section>
-
+    
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="your@email.com" required>
+    </div>
+    
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" placeholder="••••••••" required>
+    </div>
+    
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" placeholder="••••••••" required>
+    </div>
+    
+    <button type="button" class="form-btn" id="signupSubmit">Sign Up</button>
+    
+    <p class="form-toggle">Already have an account? <a href="#" id="goLogin">Login</a></p>
+  </form>
+</div>
 
 <!-- ================= PRICING MATCHED FOOTER ================= -->
 <footer class="footer">
@@ -261,60 +334,6 @@
 
 </footer>
 
-<!-- AUTH MODAL -->
-<div class="overlay hidden" id="overlay"></div>
-
-<div class="login-modal hidden" id="loginModal">
-  <!-- LOGIN FORM -->
-  <form class="form-container active" id="loginForm">
-    <h2>Welcome </h2>
-    <p class="form-subtitle">Sign in to your account</p>
-    
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" placeholder="your@email.com" required>
-    </div>
-    
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" placeholder="••••••••" required>
-    </div>
-    
-    <button type="submit" class="form-btn">Login</button>
-    
-    <p class="form-toggle">Don't have an account? <a href="#" id="goSignup">Sign up</a></p>
-  </form>
-
-  <!-- SIGNUP FORM -->
-  <form class="form-container" id="signupForm">
-    <h2>Create Account</h2>
-    <p class="form-subtitle">Join us for safer travels</p>
-    
-    <div class="form-group">
-      <label>Full Name</label>
-      <input type="text" placeholder="Your name" required>
-    </div>
-    
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" placeholder="your@email.com" required>
-    </div>
-    
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" placeholder="••••••••" required>
-    </div>
-    
-    <div class="form-group">
-      <label>Confirm Password</label>
-      <input type="password" placeholder="••••••••" required>
-    </div>
-    
-    <button type="button" class="form-btn" id="signupSubmit">Sign Up</button>
-    
-    <p class="form-toggle">Already have an account? <a href="#" id="goLogin">Login</a></p>
-  </form>
-</div>
 
 <!-- FontAwesome CDN -->
 <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
